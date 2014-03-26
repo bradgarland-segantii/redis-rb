@@ -19,7 +19,12 @@ class Redis
       :id => nil,
       :tcp_keepalive => 0,
       :reconnect_attempts => 1,
-      :inherit_socket => false
+      :inherit_socket => false,
+      :use_ssl => false,
+      :ssl_ca_file => nil,
+      :ssl_key => nil,
+      :ssl_cert => nil,
+      :ssl_verify_mode => 0
     }
 
     def options
@@ -64,6 +69,26 @@ class Redis
 
     def inherit_socket?
       @options[:inherit_socket]
+    end
+
+    def use_ssl
+      @options[:use_ssl]
+    end
+
+    def ssl_ca_file
+      @options[:ssl_ca_file]
+    end
+
+    def ssl_key
+      @options[:ssl_key]
+    end
+
+    def ssl_cert
+      @options[:ssl_cert]
+    end
+
+    def ssl_verify_mode
+      @options[:ssl_verify_mode]
     end
 
     attr_accessor :logger
