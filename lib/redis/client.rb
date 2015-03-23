@@ -416,7 +416,7 @@ class Redis
 
         if uri.scheme == "unix"
           defaults[:path]   = uri.path
-        elsif uri.scheme == "redis"
+        elsif uri.scheme == "redis" || uri.scheme == 'rediss'
           # Require the URL to have at least a host
           raise ArgumentError, "invalid url: #{uri}" unless uri.host
 
