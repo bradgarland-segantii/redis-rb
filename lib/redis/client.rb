@@ -126,7 +126,7 @@ class Redis
     end
 
     def id
-      @options[:id] || "redis://#{location}/#{db}"
+      @options[:id] || "#{scheme}://#{location}/#{db}"
     end
 
     def location
